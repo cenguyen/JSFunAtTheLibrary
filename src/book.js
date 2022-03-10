@@ -40,11 +40,24 @@ function calculatePageCount(title) {
 
 }
 
+function writeBook(title, character, genre) {
+  // ogal is to create a object
+  // 3 parameters title, character, genre
+  // book object should have property names that match the test cases (look at dot notation)
+  let bookObj = {
+    title,
+    mainCharacter: character,
+    pageCount: calculatePageCount(title),
+    genre
+  }
+  return bookObj;
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
   calculatePageCount,
-  // writeBook,
+  writeBook,
   // editBook
 }
