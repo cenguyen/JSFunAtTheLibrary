@@ -10,9 +10,16 @@ function createTitle(title) {
   }
 }
 
+function buildMainCharacter(name, age, pronouns) {
+  // goal is to create an object with properties name, age, pronouns
+  // parameters are name, age, pronouns
+  let charObj = {name, age, pronouns}
+  return charObj;
+}
+
 module.exports = {
   createTitle,
-  // buildMainCharacter,
+  buildMainCharacter,
   // saveReview,
   // calculatePageCount,
   // writeBook,
