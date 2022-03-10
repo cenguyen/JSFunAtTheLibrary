@@ -30,11 +30,21 @@ function saveReview(review, reviews) {
   return reviews;
 }
 
+function calculatePageCount(title) {
+  // goal is to add 20 pages per letter
+    // including spaces? dont forget The
+  // 1 parameter title
+  // call createTitle? 
+  // get length of title and multiply by 20
+  return title.length * 20;
+
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
+  calculatePageCount,
   // writeBook,
   // editBook
 }
