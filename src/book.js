@@ -17,10 +17,23 @@ function buildMainCharacter(name, age, pronouns) {
   return charObj;
 }
 
+function saveReview(review, reviews) {
+  // goal is to add review to an array
+  // 2 parameters, review to be added and reviews array
+  // it should add new reviews
+  // it should only add unique reviews (no dupes)
+    // check if reviews exists in array - indexOf? includes?
+    // if it does not have it
+  if (!reviews.includes(review)) {
+    reviews.push(review);
+  }
+  return reviews;
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
