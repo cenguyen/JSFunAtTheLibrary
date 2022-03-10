@@ -11,9 +11,8 @@
 // }
 
 let createTitle = title => {
-  let addThe = "The";
   if (!title) return "";
-  else return `${addThe} ${title}`
+  else return `The ${title}`
 }
 
 // function buildMainCharacter(name, age, pronouns) {
