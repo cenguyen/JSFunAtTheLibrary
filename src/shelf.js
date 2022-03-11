@@ -32,9 +32,26 @@ function listTitles(shelfName) {
   return bookTitles.join(', ');
 }
 
+function searchShelf(shelfName, bookTitle) {
+  // takes 2 paraemtners - shelf name, book title
+  // goal is to return a BOOL of whether the title exists in the given shelf 
+  // have a count? loop increase count by 1 if book title found
+  let foundBookTitle = 0;
+  for (let i = 0; i < shelfName.length; i++) {
+    if (shelfName[i].title === bookTitle) {
+      foundBookTitle ++;
+    }
+  }
+  if (foundBookTitle) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = {
   shelfBook,
   unshelfBook,
   listTitles,
-  // searchShelf
+  searchShelf
 };
