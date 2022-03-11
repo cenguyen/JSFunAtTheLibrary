@@ -4,7 +4,7 @@ function createLibrary(libraryName) {
   // object should already contain shelves with different genres
   return {
     name: libraryName,
-    "shelves": {
+    shelves: {
       "fantasy": [],
       "fiction": [],
       "nonFiction": []
@@ -12,8 +12,19 @@ function createLibrary(libraryName) {
   }
 }
 
+function addBook(library, book) {
+  // goal is to book to correct shelf
+  // 2 parameters library (which is createLibrary and book object)
+  // look at genre
+  // tests dont test for case where genre does not exist
+  let bookGenre = book.genre;
+  let addToThisShelf = library.shelves[bookGenre];
+  addToThisShelf.push(book);
+  return library;
+}
+
 module.exports = {
   createLibrary,
-  // addBook,
+  addBook,
   // checkoutBook
 };
