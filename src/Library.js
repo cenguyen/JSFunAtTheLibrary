@@ -23,8 +23,28 @@ function addBook(library, book) {
   return library;
 }
 
+function checkoutBook(library, bookTitle, bookGenre) {
+  // test is creating a lbrary and adding 3 books using addBook
+  // 3 parameters - lirbary, book name, book genre
+  // check genre first, then check book
+  // remove book from shelf
+  // return check out confirmation 
+  let libraryName = library.name;
+  let thisShelf = library.shelves[bookGenre];
+  // lets try for loop first
+  for (var i = 0; i < thisShelf.length; i++) {
+    if (bookTitle === thisShelf[i].title) {
+      thisShelf.splice(i, 1);
+      return `You have now checked out ${bookTitle} from the ${libraryName}`
+    }
+  }
+  if (thisShelf.includes(bookTitle) === false) {
+    return `Sorry, there are currently no copies of ${bookTitle} available at the ${libraryName}`;
+  }
+}
+
 module.exports = {
   createLibrary,
   addBook,
-  // checkoutBook
+  checkoutBook
 };
