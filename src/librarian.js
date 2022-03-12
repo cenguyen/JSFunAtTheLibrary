@@ -25,11 +25,13 @@ class Librarian {
       bookGenres.push(genre);
     }
     for (var i = 0; i < bookGenres.length; i++) {
-      if (thisShelf[bookGenres[i]][0].title === bookTitle) {
-        thisShelf[bookGenres[i]].splice(i, 1);
-        return `Yes, we have ${bookTitle}`;
-      } else {
-        return `Sorry, we do not have ${bookTitle}`;
+      for (var j = 0; j < bookGenres[i].length; j++) {
+        if (thisShelf[bookGenres[i]][j].title === bookTitle) {
+          thisShelf[bookGenres[i]].splice(i, 1);
+          return `Yes, we have ${bookTitle}`;
+        } else {
+          return `Sorry, we do not have ${bookTitle}`;
+        }
       }
     }
   }
