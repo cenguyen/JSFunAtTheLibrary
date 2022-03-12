@@ -37,14 +37,22 @@ let unshelfBook = (bookName, shelfName) => {
   return shelfName;
 };
 
-function listTitles(shelfName) {
-  // takes 1 parameter - shelf name
-  // goal is to return a STRING of all book titles
-  // create empty array, loop and push
+// function listTitles(shelfName) {
+//   // takes 1 parameter - shelf name
+//   // goal is to return a STRING of all book titles
+//   // create empty array, loop and push
+//   let bookTitles = [];
+//   for (var i = 0; i < shelfName.length; i++) {
+//     bookTitles.push(shelfName[i].title);
+//   }
+//   return bookTitles.join(', ');
+// }
+
+let listTitles = shelfName => {
   let bookTitles = [];
-  for (var i = 0; i < shelfName.length; i++) {
-    bookTitles.push(shelfName[i].title);
-  }
+  shelfName.forEach((book) => {
+    bookTitles.push(book.title);
+  })
   return bookTitles.join(', ');
 }
 
